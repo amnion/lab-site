@@ -1,0 +1,50 @@
+{% extends "woolleyMain/base_generic.html" %}
+
+{% block content %}
+
+{% if person_list %}
+<!-- Loop through each job class, loop through each person, populate with persons if available, empty if not -->
+
+<h3>Principal Investigator</h3>
+<hr>
+
+<h3>Post-doctoral Fellows</h3>
+<hr>
+
+<h3>Graduate Students</h3>
+<hr>
+
+<h3>Research Staff</h3>
+<hr>
+
+<h3>Lab Alumni</h3>
+<hr>
+
+<h3>Undergraduate Researchers</h3>
+<hr>
+
+<h3>Former Undergraduate Researchers</h3>
+<hr>
+
+
+<ul>
+{% for person in person_list %}
+	<li>{{ person.name }}</li>
+	<p>{{ person.description }}</p>
+	<p>{{ person.job_status}}</p>
+	{% if person.current_job %}
+		<p><b>Current job:</b> {{ person.current_job }}</p>
+	{% endif %}
+	{% if person.cv %}
+		<p><a href="{{ person.cv }}">CV</a></p>
+	{% endif %}
+{% endfor %}
+</ul>
+
+
+{% else %}
+	<p>People unavailable at this time... Check back soon or contact us directly.</p>
+{% endif %}
+
+{% endblock %}
+

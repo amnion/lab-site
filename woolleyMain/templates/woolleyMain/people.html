@@ -1,0 +1,193 @@
+{% extends "woolleyMain/base_generic.html" %}
+
+{% load static %} <!-- Need this for static image loading? -->
+
+{% block content %}
+
+{% if person_list %}
+	<!-- Loop through each job class, loop through each person, populate with persons if available, empty if not -->
+
+	{% if "1" in job_set %}
+	<h3>Principal Investigator</h3>
+	<hr>
+		{% for person in person_list %}
+		{% if person.job_status in "1" %}
+			<div class="container row">
+				<div class="col-md-auto">
+					{% if person.picture %}
+						<img src = "{{ MEDIA_URL }}{{ person.picture.url }}" width = "100" height="100"">
+					{% else %}
+						<img src = "{% static 'default_profile_pic.jpg' }" width = "100" height="100">
+					{% endif %}
+				</div>
+				<div class="col-md">
+					<h5>{{ person.name }}
+						{% if person.cv %} | <a href="{{ MEDIA_URL }}{{ person.cv.url }}" target="_blank">CV</a>{% endif %}
+						{% if person.weblink %} | <a href="{{ person.weblink }}" target="_blank">web</a>{% endif %}
+						{% if person.email %} | <a href="mailto:{{ person.email }}">{{ person.email }}</a>{% endif %}
+					</h5>
+					<p>{{ person.description }}</p>
+				</div>
+			</div>
+			<br>
+		{% endif %}
+		{% endfor %}
+	{% endif %}
+
+	{% if "2" in job_set %}
+	<h3>Post-doctoral Fellows</h3>
+	<hr>
+		{% for person in person_list %}
+		{% if person.job_status in "2" %}
+			<div class="container row">
+				<div class="col-md-auto">
+					{% if person.picture %}
+						<img src = "{{ MEDIA_URL }}{{ person.picture.url }}" width = "100" height="100"">
+					{% else %}
+						<img src = "{% static 'woolleyMain/default_profile_pic.jpg' %}" width = "100" height="100">
+					{% endif %}
+				</div>
+				<div class="col-md">
+					<h5>{{ person.name }}
+						{% if person.cv %} | <a href="{{ MEDIA_URL }}{{ person.cv.url }}" target="_blank">CV</a>{% endif %}
+						{% if person.weblink %} | <a href="{{ person.weblink }}" target="_blank">web</a>{% endif %}
+						{% if person.email %} | <a href="mailto:{{ person.email }}">{{ person.email }}</a>{% endif %}
+					</h5>
+					<p>{{ person.description }}</p>
+				</div>
+			</div>
+			<br>
+		{% endif %}
+		{% endfor %}
+	{% endif %}
+
+	{% if "3" in job_set %}
+	<h3>Graduate Students</h3>
+	<hr>
+		{% for person in person_list %}
+		{% if person.job_status in "3" %}
+			<div class="container row">
+				<div class="col-md-auto">
+					{% if person.picture %}
+						<img src = "{{ MEDIA_URL }}{{ person.picture.url }}" width = "100" height="100"">
+					{% else %}
+						<img src = "{% static 'woolleyMain/default_profile_pic.jpg' %}" width = "100" height="100">
+					{% endif %}
+				</div>
+				<div class="col-md">
+					<h5>{{ person.name }}
+						{% if person.cv %} | <a href="{{ MEDIA_URL }}{{ person.cv.url }}" target="_blank">CV</a>{% endif %}
+						{% if person.weblink %} | <a href="{{ person.weblink }}" target="_blank">web</a>{% endif %}
+						{% if person.email %} | <a href="mailto:{{ person.email }}">{{ person.email }}</a>{% endif %}
+					</h5>
+					<p>{{ person.description }}</p>
+				</div>
+			</div>
+			<br>
+		{% endif %}
+		{% endfor %}
+	{% endif %}
+
+	{% if "4" in job_set %}
+	<h3>Research Staff</h3>
+	<hr>
+		{% for person in person_list %}
+		{% if person.job_status in "4" %}
+			<div class="container row">
+				<div class="col-md-auto">
+					{% if person.picture %}
+						<img src = "{{ MEDIA_URL }}{{ person.picture.url }}" width = "100" height="100"">
+					{% else %}
+						<img src = "{% static 'woolleyMain/default_profile_pic.jpg' %}" width = "100" height="100">
+					{% endif %}
+				</div>
+				<div class="col-md">
+					<h5>{{ person.name }}
+						{% if person.cv %} | <a href="{{ MEDIA_URL }}{{ person.cv.url }}" target="_blank">CV</a>{% endif %}
+						{% if person.weblink %} | <a href="{{ person.weblink }}" target="_blank">web</a>{% endif %}
+						{% if person.email %} | <a href="mailto:{{ person.email }}">{{ person.email }}</a>{% endif %}
+					</h5>
+					<p>{{ person.description }}</p>
+				</div>
+			</div>
+			<br>
+		{% endif %}
+		{% endfor %}
+	{% endif %}
+
+	{% if "5" in job_set %}
+	<h3>Lab Alumni</h3>
+	<hr>
+		{% for person in person_list %}
+		{% if person.job_status in "5" %}
+			<div class="container row">
+				<div class="col-md-auto">
+					{% if person.picture %}
+						<img src = "{{ MEDIA_URL }}{{ person.picture.url }}" width = "100" height="100"">
+					{% else %}
+						<img src = "{% static 'woolleyMain/default_profile_pic.jpg' %}" width = "100" height="100">
+					{% endif %}
+				</div>
+				<div class="col-md">
+					<h5>{{ person.name }}
+						{% if person.cv %} | <a href="{{ MEDIA_URL }}{{ person.cv.url }}" target="_blank">CV</a>{% endif %}
+						{% if person.weblink %} | <a href="{{ person.weblink }}" target="_blank">web</a>{% endif %}
+						{% if person.email %} | <a href="mailto:{{ person.email }}">{{ person.email }}</a>{% endif %}
+					</h5>
+					<p>{{ person.description }}</p>
+				</div>
+			</div>
+			<br>
+		{% endif %}
+		{% endfor %}
+	{% endif %}
+
+	{% if "6" in job_set %}
+	<h3>Undergraduate Researchers</h3>
+	<hr>
+		{% for person in person_list %}
+		{% if person.job_status in "6" %}
+			<div class="container row">
+				<div class="col-md-auto">
+					{% if person.picture %}
+						<img src = "{{ MEDIA_URL }}{{ person.picture.url }}" width = "100" height="100"">
+					{% else %}
+						<img src = "{% static 'woolleyMain/default_profile_pic.jpg' %}" width = "100" height="100">
+					{% endif %}
+				</div>
+				<div class="col-md">
+					<h5>{{ person.name }}
+						{% if person.cv %} | <a href="{{ MEDIA_URL }}{{ person.cv.url }}" target="_blank">CV</a>{% endif %}
+						{% if person.weblink %} | <a href="{{ person.weblink }}" target="_blank">web</a>{% endif %}
+						{% if person.email %} | <a href="mailto:{{ person.email }}">{{ person.email }}</a>{% endif %}
+					</h5>
+					<p>{{ person.description }}</p>
+				</div>
+			</div>
+			<br>
+		{% endif %}
+		{% endfor %}
+	{% endif %}
+
+	{% if "7" in job_set %}
+	<h3>Former Undergraduate Researchers</h3>
+	<hr>
+		{% for person in person_list %}
+		{% if person.job_status in "7" %}
+			<div class="container row">
+				<p>{{ person.name }}
+					{% if person.cv %} | <a href="{{ MEDIA_URL }}{{ person.cv.url }}" target="_blank">CV</a>{% endif %}
+					{% if person.weblink %} | <a href="{{ person.weblink }}" target="_blank">web</a>{% endif %}
+					{% if person.email %} | <a href="mailto:{{ person.email }}">{{ person.email }}</a>{% endif %}
+				</p>
+			</div>
+		{% endif %}
+		{% endfor %}
+	{% endif %}
+
+
+{% else %}
+	<p>People unavailable at this time... Check back soon or contact us directly.</p>
+{% endif %}
+
+{% endblock %}

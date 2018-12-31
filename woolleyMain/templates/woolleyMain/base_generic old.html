@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 	{% block title %}<title>Woolley Lab</title>{% endblock %}
+ 	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+	<!-- Add additional CSS in static file -->
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'woolleyMain/style.css' %}">
+</head>
+	
+	<body>
+		<h1> Woolley lab at columbia </h1>
+
+		<div class = MainBlock>
+
+			{% block navbar %}
+			<div class = NavBar>
+				<a href = "{% url 'woolleyMain:home' %}">Home</a> |
+				<a href = "{% url 'woolleyMain:pubs' %}" >Publications</a> | 
+				<a href = "{% url 'woolleyMain:people' %}" >People</a> | 
+				<a href = "{% url 'woolleyMain:community' %}" >Community</a> |  
+				<a href = "{% url 'woolleyMain:media' %}" >Media</a> | 
+				<a href = "{% url 'woolleyMain:positions' %}" >Positions</a>
+			</div>
+			{% endblock %}
+
+			<div class = Content>
+				{% block content %}{% endblock %}
+			</div>
+		</div>
+	</body>
+	
+</html>

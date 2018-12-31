@@ -1,0 +1,25 @@
+{% extends "woolleyMain/base_generic.html" %}
+
+{% block content %}
+
+<h3>Selected Publications</h3>
+<hr>
+
+<h3>All Publications</h3>
+<hr>
+{% if pub_list %}
+<ul style="list-style-type: none; border-style: solid;
+	border-width: 1px; border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px;
+	border-color: black">
+{% for pub in pub_list %}
+	<li>{{ pub.authors }}. <b>{{ pub.date.year }}.</b> {{ pub.title }}. <a href="{{ pub.link }}" target="_blank"> {{ pub.journal }} </a> </li>
+	<br>
+{% endfor %}
+</ul>
+
+
+{% else %}
+	<p>Publications unavailable at this time... Check back soon or contact us directly.</p>
+{% endif %}
+
+{% endblock %}
