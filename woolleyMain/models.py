@@ -12,6 +12,9 @@ class Publication(models.Model):
 	def get_year(self):
 		return self.date.year
 
+	def __str__(self):
+		return self.title
+
 class Person(models.Model):
 
 	JOB_CHOICES = (
@@ -26,17 +29,23 @@ class Person(models.Model):
 
 	name = models.CharField(max_length = 1000)
 	job_status = models.CharField(max_length = 1000, choices = JOB_CHOICES, default = '3')
-	description = models.CharField(max_length = 1000, blank = True)
+	description = models.TextField(max_length = 1000, blank = True)
 	picture = models.ImageField(blank = True, default = 'woolleyMain/default_profile_pic.jpg')
 	cv = models.FileField(blank = True)
 	weblink = models.CharField(max_length = 1000, blank = True)
 	email = models.CharField(max_length = 1000, blank = True)
+
+	def __str__(self):
+		return self.name
 
 class LabNewsItem(models.Model):
 
 	header = models.CharField(max_length = 1000)
 	text = models.CharField(max_length = 1000)
 	date = models.DateField()
+
+	def __str__(self):
+		return self.header
 
 class LabMissionText(models.Model):
 
