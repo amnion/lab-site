@@ -25,7 +25,7 @@ SECRET_KEY = ')jtx&b4h#q!gwpbejor-r!uwvo7$dw_yvsb_5w#1o90lc#5vu+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['jacobedwards.pythonanywhere.com']
 
 
 # Application definition
@@ -127,3 +127,6 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
