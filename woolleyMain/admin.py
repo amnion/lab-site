@@ -4,7 +4,7 @@ from .models import Publication, Person, LabNewsItem, LabMissionText, ResearchIt
 
 class PersonAdmin(admin.ModelAdmin):
 	list_display = ('name', 'job_status')
-	list_filter = ['job_status']
+	ordering = ('job_status',)
 
 class PubAdmin(admin.ModelAdmin):
 	list_display = ('title', 'date', 'journal')

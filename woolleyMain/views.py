@@ -17,6 +17,9 @@ class HomeView(generic.TemplateView):
 		}
 		return context
 
+class ResearchView(generic.TemplateView):
+	template_name = 'woolleyMain/research.html'
+
 class PubsView(generic.ListView):
 	template_name = 'woolleyMain/pubs.html'
 	context_object_name = 'pub_list'

@@ -1,0 +1,32 @@
+{% extends "woolleyMain/base_generic.html" %}
+{% load static %}
+
+{% block content %}
+<div class="row py-3">
+	<div class="col-12">
+Our lab studies how perception in the context of social communication is accomplished in the brain.
+<br>
+<hr>
+Songbirds learn to recognize, respond to and produce the complex songs of other birds. They use their songs to communicate socially, in the contexts of mating and self advertisement. This makes them very interesting model systems for understanding how sensory signals are encoded and decoded by the brain and how that process results in perception and social communication. The lab is focused on four projects that address how the brain functions during song perception.
+	</div>
+</div>
+<div class="row py-3">
+	<div class="col-10">
+First, auditory neurons in the songbird brain encode songs differently from other sounds. Their basic tuning properties appear to vary depending on the sounds that birds hear and they appear to be specialized for coding song. Using electrophysiology, anatomy and computational analysis techniques, we are studying the mechanisms of tuning plasticity in these sensory neurons, and how that plasticity is related to perception.
+<br><br>
+Second, we are interested in the co-evolution of vocal behavior and auditory perception. We use electrophysiology and behavioral analyses to understand how the auditory system differs functionally among songbird species with songs that differ in their acoustic composition.
+	</div>
+	<div class="col-2" style="background-image: url({% static 'woolleyMain/default_profile_pic.jpg' %}); background-size: contain; background-position: right; background-repeat: no-repeat;">
+	</div>
+</div>
+<div class="row py-3">
+	<div class="col-2" style="background-image: url({% static 'woolleyMain/default_profile_pic.jpg' %}); background-size: contain; background-position: left; background-repeat: no-repeat;">
+	</div>
+	<div class="col-10">
+Third, we are interested in how experience shapes behavioral responses to song, and the neural encoding of songs and sound in general. We study this by manipulating the acoustic experience of young birds and adults and examining how the functioning of the auditory system and behavioral measures of perception and social interaction vary with experience.
+<br><br>
+Fourth, we are interested in the salient acoustic aspects of songs for recognition and discrimination. We use the manipulation of the acoustic properties of songs and behavioral techniques to address this issue.
+	</div>
+</div>
+
+{% endblock %}

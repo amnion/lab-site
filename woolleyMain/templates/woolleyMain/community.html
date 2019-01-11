@@ -1,7 +1,20 @@
 {% extends "woolleyMain/base_generic.html" %}
+{% load static %}
 
 {% block content %}
-
-We are at the zuckerman institute which is so cool
+<div class="row py-3">
+	<div class="col-8">
+The Jerome L. Greene Science Center was conceived as a place for human connection, intellectual excellence and pioneering research that cuts across traditional academic boundaries. Home to Columbia’s Mortimer B. Zuckerman Mind Brain Behavior Institute, it will be a thriving hub that brings together faculty and students from across Columbia University, scholars from around the world and members of the local community. The building was made possible by a gift from the late Dawn M. Greene '80HON and the Jerome L. Greene Foundation in memory of Jerome L. Greene '26CC,'28LAW. The Zuckerman Institute was established through a gift from New York philanthropist and business leader Mortimer B. Zuckerman.
+	</div>
+	<div class="col-4" style="background-image: url({% static 'woolleyMain/manhattanville.jpg' %}); background-size: contain; background-position: right; background-repeat: no-repeat;">
+	</div>
+</div>
+<div class="row py-3">
+	<div class="col-4" style="background-image: url({% static 'woolleyMain/greeneInterior.jpg' %}); background-size: contain; background-position: left; background-repeat: no-repeat;">
+	</div>
+	<div class="col-8">
+At the Jerome L. Greene Science Center, hundreds of the world’s leading researchers will tackle the most exciting scientific challenge of our time: understanding how the brain works and gives rise to mind and behavior. The Zuckerman Institute, led by Nobel laureates, brings together a constellation of neuroscientists, engineers, statisticians, psychologists and other scholars from across Columbia University who will collaborate on research, teaching and public programming. A deeper understanding of the brain promises to transform human health and society. From effective treatments for disorders like Alzheimer's, Parkinson's, depression and autism, to advances in fields as fundamental as computer science, economics, law, the arts and social policy, the potential impact for humanity is enormous. 
+	</div>
+</div>
 
 {% endblock %}
